@@ -1,79 +1,642 @@
-<!DOCTYPE html>
-<html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="vadli">
+    <meta name="author" content="vadli">
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Zoo : ">
+		<!-- ico Link
+    <link rel="shortcut icon" href="//getbootstrap.com/assets/ico/favicon.ico"> -->
+	<link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANOSURBVDhPdZJZbExRHMYPU9RSS4yGbtMZ015zZ+3cO1pLNNaEBxISiWhqa0TwgMQLEhIvEokQb140eCBESlFVSy3VhZpW19nbO52lna0d2unM3HOO/xVELA/fy8n9fvnu//sQ5SiiPEUJLUFRFUF0OZXBmxy0nlroOiGb5LUimvsR0dkg9KcQfJgPAPOkjhYEcrF60iBWYjPZN2Qau+VhojWeBWLFB0RXg1H/T4DI4UoPH3vwlcVHA4vSVVYm0GLXh+s/sf7Wz2yw0SfHWwHA/gBM/SsB5kjFU97h92hHb8QUqbMvjS6Xb2n85jvtYJdTE707uACvA4AetPR/v2B08pF7TSWC1b0sVtOmHWodU6bOvzC4XQHV+LVoLj4QXCxW9MwSywFSBJB5v4OkG8wTOXKkjnd4G00e57By4lJQkbhYY+qLtjDejmad0G1jR16F8lNHrDJSBpDlAJj2EyIBpoBWwB3u20vCdaEcsSqYnzhn1QZaewwjzzqLhp87iqKPfItTh9oQsbQhagaz7HeABJkP2gC1bYTaCm1ZYllKQzdRMzUlNYT7WoTXRJRY7c+lC/vn0AyA/KpTMktioModaSMt7cig8mZE5cE8eLdQBG+IltK5sI9yWkbX+pYQBnahgQSLpBSSeTo0sWuAjz0e14sHnVnpXfY54p5Jhq6fZEmJPwcXTLB4dy8fet5tGn4dzEmdsMroCjCXSeP6Hp9wZP8En7owXoz3CgXxaq9q7LZV538/oIxXh5akDw+pvlx/qXd73msHeyKK5KmuGXglHNMCgIXf4wvc2E2bOfxwXCWeqTc4hVpjf+iJ0R5sYoXPtuJw3QNTX7jB4HQ7loXrBwvj1fYscQsApGMyEkDXx4UefTD7mjt1gTe1pv6RFp23LaZOXG3Qu4RmjbejSSt0vTC4HO06X7ugHr0D894GgFUAYCWAMsJNXKnlbSGY7tuoInlhJC91fCg7vSdSmDyZKBZPvzEO9DrU0fujMCpvdnpn5zRSCgAFAKZLgEzQZpEnx5Is2Q7xyq0Z1PhpKpVjPWX8lvj1Rt7jDqkSl3tnYmmNPKjgzx1kQo3z0wYi684kqAXqgUsjbKI5Io8rsYVURQrxhvYpRDIzYM74CfgGcLBINn0hZ2QAAAAASUVORK5CYII=">
+		<!-- here up ^ -->
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <title>ZoO</title>
 
-    <title>Zoo</title>
+    <!-- Bootstrap core CSS -->
+	<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"> -->
+
+			<!-- bootstrap.min css
+	<link href="http://bootswatch.com/united/bootstrap.min.css" rel="stylesheet"> -->
+	<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+		<!-- here up ^ -->
+		
+		<!-- bootstrap-theme.min & MyY css -->
+	<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/pygment_trac.css">
+		<!-- here up ^ -->
+		
+	<link href="//getbootstrap.com/examples/offcanvas/offcanvas.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="offcanvas.css" rel="stylesheet"> -->
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
 
   <body>
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">zoO spaghetti</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active">
+	<a href="http://vadli.github.io/zoo/" title="Now you are here">
+	<span class="glyphicon glyphicon-asterisk"></span>
+	herE
+	</a>
+			</li>
+			
+            <li>
+	<a href="http://vk.com/vadim.lyubimenko" target="_blank" title="my acc on vk.com">
+	on vK
+	</a>
+			</li>
+			
+            <li>
+	<a href="http://facebook.com/vadim.lyubimenko" target="_blank" title="my acc on faceBook.com">
+	on faceBooK
+	</a>
+			</li>
+			
+            <li>
+	<a href="http://twitter.com/VadimLyubimenko" target="_blank" title="my acc on twitter.com">
+	on twitteR
+	</a>
+			</li>
+			
+            <li>
+	<a href="http://brainstorage.me/vadim.lyubimenko" target="_blank" title="my acc on brainstorage.me">
+	on brainstoragE
+	</a>
+			</li>
+			
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container-fluid -->
+    </div><!-- /.navbar -->
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/vadli/zoo">View on GitHub</a>
+    <div class="container-fluid">
 
-          <h1 id="project_title">Zoo</h1>
-          <h2 id="project_tagline"></h2>
+      <div class="row row-offcanvas row-offcanvas-right">
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/vadli/zoo/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/vadli/zoo/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+        <div class="col-xs-12 col-sm-9">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">сlick on me</button>
+          </p>
+		  
+          <div class="jumbotron">
+		  
+		<h1 class="pull-left">hI _ </h1>
+		
+		<br><br>
+		<div class="input-group input-group-lg col-md-4">
+			<span class="input-group-addon">@</span>
+			<input type="text" class="form-control" placeholder="Username">
+		</div>
+		
+		<div class=""></div>
+		
+            <p> </p>
+			
+          </div>
+		  
+          <div class="row"> <!-- _______________________ -->
+		  
+<ul id="yw2" class="nav nav-tabs">
+<li class="active">
+<a data-toggle="tab" href="#yw1_tab_1">english</a>
+</li>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<li>
+<a data-toggle="tab" href="#yw1_tab_2">русский</a>
+</li>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<li>
+<a data-toggle="tab" href="#yw1_tab_3">中國的 :)</a>
+</li>
+</ul>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<div class="tab-content">
+	<!-- 
+	panel-default panel-primary panel-success 
+	panel-info panel-warning panel-danger
+	-->
+<div id="yw1_tab_1" class="tab-pane fade active in">
+		<br>
+<div class="alert alert-info">
+when translating auxiliary tool was Google translator	
+</div>
+	
+            <div class="col-6 col-sm-6 col-lg-4">
+				<div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"> 
+		<span class="glyphicon glyphicon-star"></span>
+			  Favorite Tools
+		<span class="glyphicon glyphicon-star"></span>
+			  </h3>
+            </div>
+			<div class="panel-body">
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+            <p> 
+			<a href="http://yiiframework.com" target="_blank">Yii
+			</a> (php framework) 
+			</p>
+			
+            <p> 
+			on Yii: Gii code generator, Active Record, DAO (Data Access Object).
+			</p>
+			
+			<p>
+			<a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> (css framework by Twitter) 
+			</p>
+			 
+			<p>
+			<a href="http://angularjs.org/" target="_blank">Angular Js</a> (Java Script framework by Google) 
+			</p>
+			
+			<p>
+			<a href="https://drupal.org/" target="_blank">Drupal
+			</a> (CMS _ Content management system)
+			</p>
+			
+			<p>
+			<a href="https://jmeter.apache.org/" target="_blank">Jmeter
+			</a> (load test by Apache Foundation)
+			</p>
+			
+			</div><!--/panel-body-->
+				</div><!--/panel-->
+            </div><!--/span-->
+			
+            <div class="col-6 col-sm-6 col-lg-4">
+				<div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title"> 
+		<span class="glyphicon glyphicon-star"></span>
+			  Favorite Lang
+		<span class="glyphicon glyphicon-star"></span>
+			  </h3>
+            </div>
+			<div class="panel-body">
+			
+            <p>
+			<a href="http://www.php.net/" target="_blank">PHP</a>
+			</p>
+			
+			<p>
+			<a href="http://www.w3schools.com/css/DEFAULT.asp" target="_blank">CSS</a>
+			</p>
+			
+			<p>
+			<a href="http://www.w3schools.com/html/DEFAULT.asp" target="_blank">HTML</a>
+			</p>
+			
+			<p>
+			<a href="http://www.w3schools.com/js/DEFAULT.asp" target="_blank">Java Script</a>
+			</p>
+			
+			<p>
+			<a href="http://www.w3schools.com/sql/default.asp" target="_blank">SQL</a>
+			</p>
+			
+			</div><!--/panel-body-->
+				</div><!--/panel-->
+            </div><!--/span-->
+			
+            <div class="col-6 col-sm-6 col-lg-4">
+				<div class="panel panel-danger">
+            <div class="panel-heading">
+              <h3 class="panel-title">Other Contacts</h3>
+			  
+            </div>
+			<div class="panel-body">
+			
+		<ul>
+            <li>
+	<a href="http://fotostrana.ru/user/71758628/" target="_blank">
+	on fotostranA
+	</a>
+			</li>
+			
+            <li>
+	<a href="http://sprashivai.ru/VadimLyubimenko" target="_blank">
+	on sprashivaI
+	</a>
+			</li>
+			
+            <li>
+	<a href="http://eu1.badoo.com/vadimli/" target="_blank">
+	on badoO
+	</a>
+			</li>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+		</ul>
+			  
+	<p>icq: 359359353</p>
+	<p>email: vadim.lyubimenko@mail.ru</p>
+	<p>mostly I'm on 
+	<a href="http://vk.com/vadim.lyubimenko" target="_blank">
+	vk.com</a>
+	<p/>
+	
+			</div><!--/panel-body-->
+				</div><!--/panel-->
+            </div><!--/span--> 
+			
+</div><!-- yw1_tab_1 -->
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<div id="yw1_tab_2" class="tab-pane fade">
+		<br>
+<div class="alert alert-info">
+при переводе вспомогательным инструментом был google переводчик
+</div>
+	
+            <div class="col-6 col-sm-6 col-lg-4">
+				<div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"> 
+		<span class="glyphicon glyphicon-star"></span>
+			  Избранные Инструменты
+		<span class="glyphicon glyphicon-star"></span>
+			  </h3>
+            </div>
+			<div class="panel-body">
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+            <p> 
+			<a href="http://yiiframework.com" target="_blank">Yii
+			</a> (php framework) 
+			</p>
+			
+            <p> 
+			в Yii: Gii code generator, Active Record, DAO (Объекты доступа к данным).
+			</p>
+			
+			<p>
+			<a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> (css framework от Twitter) 
+			</p>
+			 
+			<p>
+			<a href="http://angularjs.org/" target="_blank">Angular Js</a> (Java Script framework от Google) 
+			</p>
+			
+			<p>
+			<a href="https://drupal.org/" target="_blank">Drupal
+			</a> (CMS Систе́ма управле́ния содержи́мым)
+			</p>
+			
+			<p>
+			<a href="https://jmeter.apache.org/" target="_blank">Jmeter
+			</a> (нагрузочный тест от Apache Foundation)
+			</p>
+			
+			</div><!--/panel-body-->
+				</div><!--/panel-->
+            </div><!--/span-->
+			
+            <div class="col-6 col-sm-6 col-lg-4">
+				<div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title"> 
+		<span class="glyphicon glyphicon-star"></span>
+			  Избранные Языки
+		<span class="glyphicon glyphicon-star"></span>
+			  </h3>
+            </div>
+			<div class="panel-body">
+			
+            <p>
+			<a href="http://www.php.net/" target="_blank">PHP</a>
+			</p>
+			
+			<p>
+			<a href="http://www.w3schools.com/css/DEFAULT.asp" target="_blank">CSS</a>
+			</p>
+			
+			<p>
+			<a href="http://www.w3schools.com/html/DEFAULT.asp" target="_blank">HTML</a>
+			</p>
+			
+			<p>
+			<a href="http://www.w3schools.com/js/DEFAULT.asp" target="_blank">Java Script</a>
+			</p>
+			
+			<p>
+			<a href="http://www.w3schools.com/sql/default.asp" target="_blank">SQL</a>
+			</p>
+			
+			</div><!--/panel-body-->
+				</div><!--/panel-->
+            </div><!--/span-->
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+            <div class="col-6 col-sm-6 col-lg-4">
+				<div class="panel panel-danger">
+            <div class="panel-heading">
+              <h3 class="panel-title">Другие Контакты</h3>
+			  
+            </div>
+			<div class="panel-body">
+			
+		<ul>
+            <li>
+	<a href="http://fotostrana.ru/user/71758628/" target="_blank">
+	в fotostranA
+	</a>
+			</li>
+			
+            <li>
+	<a href="http://sprashivai.ru/VadimLyubimenko" target="_blank">
+	в sprashivaI
+	</a>
+			</li>
+			
+            <li>
+	<a href="http://eu1.badoo.com/vadimli/" target="_blank">
+	в badoO
+	</a>
+			</li>
+			
+            <li>
+	<a href="http://ru.linkedin.com/pub/вадим-любименко/85/ba8/54/" target="_blank">
+	в linkediN
+	</a>
+			</li>
+			
+            <li>
+	<a href="http://freelansim.ru/freelancers/vadimlyubimenko" target="_blank">
+	в freelansiM
+	</a>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+	<a href="http://weblancer.net/users/vadimlyubimenko/" target="_blank">
+	в weblanceR
+	</a>
+			</li>
+		</ul>
+			  
+	<p>icq: 359359353</p>
+	<p>e-почта: vadim.lyubimenko@mail.ru</p>
+	<p>чаще всего я в
+	<a href="http://vk.com/vadim.lyubimenko" target="_blank">
+	vk.com</a>
+	<p/>
+			</div><!--/panel-body-->
+				</div><!--/panel-->
+            </div><!--/span--> 
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+</div><!-- yw1_tab_2 -->
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<div id="yw1_tab_3" class="tab-pane fade">
+		<br>
+<div class="alert alert-info">
+在翻譯輔助工具是谷歌翻譯
+</div>
+	
+            <div class="col-6 col-sm-6 col-lg-4">
+				<div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"> 
+		<span class="glyphicon glyphicon-star"></span>
+			  特色工具
+		<span class="glyphicon glyphicon-star"></span>
+			  </h3>
+            </div>
+			<div class="panel-body">
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
+            <p> 
+			<a href="http://yiiframework.com" target="_blank">Yii
+			</a> (php framework) 
+			</p>
+			
+            <p> 
+			on Yii: Gii code generator, Active Record, DAO (數據訪問對象).
+			</p>
+			
+			<p>
+			<a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> (css framework by Twitter) 
+			</p>
+			 
+			<p>
+			<a href="http://angularjs.org/" target="_blank">Angular Js</a> (Java Script framework by Google) 
+			</p>
+			
+			<p>
+			<a href="https://drupal.org/" target="_blank">Drupal
+			</a> (CMS 內容管理系統)
+			</p>
+			
+			<p>
+			<a href="https://jmeter.apache.org/" target="_blank">Jmeter
+			</a> (荷載試驗 by Apache Foundation)
+			</p>
+			
+			</div><!--/panel-body-->
+				</div><!--/panel-->
+            </div><!--/span-->
+			
+            <div class="col-6 col-sm-6 col-lg-4">
+				<div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title"> 
+		<span class="glyphicon glyphicon-star"></span>
+			  所選語言
+		<span class="glyphicon glyphicon-star"></span>
+			  </h3>
+            </div>
+			<div class="panel-body">
+			
+            <p>
+			<a href="http://www.php.net/" target="_blank">PHP</a>
+			</p>
+			
+			<p>
+			<a href="http://www.w3schools.com/css/DEFAULT.asp" target="_blank">CSS</a>
+			</p>
+			
+			<p>
+			<a href="http://www.w3schools.com/html/DEFAULT.asp" target="_blank">HTML</a>
+			</p>
+			
+			<p>
+			<a href="http://www.w3schools.com/js/DEFAULT.asp" target="_blank">Java Script</a>
+			</p>
+			
+			<p>
+			<a href="http://www.w3schools.com/sql/default.asp" target="_blank">SQL</a>
+			</p>
+			
+			</div><!--/panel-body-->
+				</div><!--/panel-->
+            </div><!--/span-->
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Zoo maintained by <a href="https://github.com/vadli">vadli</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+            <div class="col-6 col-sm-6 col-lg-4">
+				<div class="panel panel-danger">
+            <div class="panel-heading">
+              <h3 class="panel-title">其他聯繫方式</h3>
+			  
+            </div>
+			<div class="panel-body">
+			
+		<ul>
+            <li>
+	<a href="http://fotostrana.ru/user/71758628/" target="_blank">
+	on fotostranA
+	</a>
+			</li>
+			
+            <li>
+	<a href="http://sprashivai.ru/VadimLyubimenko" target="_blank">
+	on sprashivaI
+	</a>
+			</li>
+			
+            <li>
+	<a href="http://eu1.badoo.com/vadimli/" target="_blank">
+	on badoO
+	</a>
+			</li>
+
+		</ul>
+			  
+	<p>icq: 359359353</p>
+	<p>電子郵件: vadim.lyubimenko@mail.ru</p>
+	<p>我最常
+	<a href="http://vk.com/vadim.lyubimenko" target="_blank">
+	vk.com</a>
+	<p/>
+			</div><!--/panel-body-->
+				</div><!--/panel-->
+            </div><!--/span--> 
+
+</div><!-- yw1_tab_3 -->
+
+</div>
+
+          </div><!--/row-->
+		  
+
+		  
+        </div><!--/span MAIN BODY CENTER -->
+		
+		
+			<!-- RIGHT SIDEBAR -->
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation <!-- complementary -->">
+          <div class="list-group
+		  nav bs-docs-sidenav">
+		  
+		<label>
+			<h1> <small>
+		<span class="glyphicon glyphicon-star"></span>
+			Favorite Links
+		<span class="glyphicon glyphicon-star"></span>
+			</small></h1> 
+		</label>
+				
+            <a href="http://habrahabr.ru/" class="list-group-item"
+			target="_blank">habrahabr</a>
+            <a href="http://keddr.com/" class="list-group-item"
+			target="_blank">keddr</a>
+			
+			<a href="http://animeonline.su/" class="list-group-item"
+			target="_blank">anime online</a>
+			<a href="http://online.anidub.com/" class="list-group-item"
+			target="_blank">online.anidub</a>
+			<a href="http://anidub.com/" class="list-group-item"
+			target="_blank">anidub</a>
+			
+            <a href="http://veddro.com/" class="list-group-item"
+			target="_blank">veddro</a>
+			
+		<label>
+			<h1> <small>
+		<span class="glyphicon glyphicon-star"></span>
+			youtube channel
+		<span class="glyphicon glyphicon-star"></span>
+			</small></h1> 
+		</label>
+			
+            <a href="http://www.youtube.com/user/Keddrcom" class="list-group-item"
+			target="_blank">keddr</a>
+            <a href="http://www.youtube.com/user/ZariumGames" class="list-group-item"
+			target="_blank">gs tv</a>
+            <a href="http://carambatv.ru/humor/100500/" class="list-group-item"
+			target="_blank">100500</a>
+            <a href="http://www.youtube.com/user/ThisIsHorosho" class="list-group-item"
+			target="_blank">this is horosho</a>
+			
+            <a href="http://www.youtube.com/user/veddrocom" class="list-group-item"
+			target="_blank">veddro</a>
+            <a href="http://www.youtube.com/user/stillavinlive" class="list-group-item"
+			target="_blank">stillavin live</a>
+			
+		<label>
+			<h1> <small>
+		<span class="glyphicon glyphicon-star"></span>
+			other
+		<span class="glyphicon glyphicon-star"></span>
+			</small></h1> 
+		</label>
+		
+            <a href="http://torrentz.eu/" class="list-group-item"
+			target="_blank">torrentz</a>
+            <a href="https://ru.4game.com/" class="list-group-item"
+			target="_blank">4 game</a>
+            <a href="https://eu.battle.net/account/creation/wow/signup/" class="list-group-item"
+			target="_blank">battle.net</a>
+            <a href="http://store.steampowered.com/" class="list-group-item"
+			target="_blank">steam</a>
+            <a href="https://www.origin.com/ru-ru/store/-ANW.html" class="list-group-item"
+			target="_blank">origin</a>
+			
+          </div>
+        </div><!--/span-->
+		
+		
+		
+      </div><!--/row-->
+		
+      <hr>
+	
+      <footer>
+        <p class="text-muted">This project is maintained by <a href="https://github.com/vadli" target="_blank">vadli</a></p>
+        <p class="text-muted"><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://bootswatch.com/" target="_blank">Bootswatch </a></small></p>
+		
+		<p class="pull-right"><a href="#">Back to top</a></p>
       </footer>
-    </div>
 
-    
+    </div><!--/.container-fluid-->
 
-  </body>
-</html>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<!-- http://www.bootstrapcdn.com/ -->
+	
+			<!-- bootstrap.min & MyY js
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
+	<script src="javascripts/main.js"></script>
+		<!-- here up ^ -->
+		
+	<script src="//getbootstrap.com/examples/offcanvas/offcanvas.js"></script>
+	<!-- https://github.com/MaxCDN/bootstrap-cdn/issues/67
+	http://cdnjs.com/libraries/twitter-bootstrap/	-->
+	<script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/js/bootstrap-tab.js"></script>
+	<!-- https://developers.google.com/speed/libraries/devguide?hl=ru -->
+	<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script> -->
+
+</body></html>
