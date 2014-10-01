@@ -9,3 +9,13 @@
 
 
 /* MyY >>> */
+.jumbotron {
+padding-bottom: 100px;
+}
+
+/* Angular JS >>> */
+
+.done-true {
+  text-decoration: line-through;
+  color: grey;
+}
