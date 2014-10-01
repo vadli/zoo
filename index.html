@@ -1,10 +1,16 @@
-<html lang="en"><head>
+<html ng-app="app1" lang="en" ng-app><head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="vadli">
     <meta name="author" content="vadli">
 
+	<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script> -->
+			<!-- bootstrap.min & MyY js
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
+	<!-- <script src="javascripts/main.js"></script> -->
+		<!-- here up ^ -->
+	
 		<!-- ico Link
     <link rel="shortcut icon" href="//getbootstrap.com/assets/ico/favicon.ico"> -->
 	<link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANOSURBVDhPdZJZbExRHMYPU9RSS4yGbtMZ015zZ+3cO1pLNNaEBxISiWhqa0TwgMQLEhIvEokQb140eCBESlFVSy3VhZpW19nbO52lna0d2unM3HOO/xVELA/fy8n9fvnu//sQ5SiiPEUJLUFRFUF0OZXBmxy0nlroOiGb5LUimvsR0dkg9KcQfJgPAPOkjhYEcrF60iBWYjPZN2Qau+VhojWeBWLFB0RXg1H/T4DI4UoPH3vwlcVHA4vSVVYm0GLXh+s/sf7Wz2yw0SfHWwHA/gBM/SsB5kjFU97h92hHb8QUqbMvjS6Xb2n85jvtYJdTE707uACvA4AetPR/v2B08pF7TSWC1b0sVtOmHWodU6bOvzC4XQHV+LVoLj4QXCxW9MwSywFSBJB5v4OkG8wTOXKkjnd4G00e57By4lJQkbhYY+qLtjDejmad0G1jR16F8lNHrDJSBpDlAJj2EyIBpoBWwB3u20vCdaEcsSqYnzhn1QZaewwjzzqLhp87iqKPfItTh9oQsbQhagaz7HeABJkP2gC1bYTaCm1ZYllKQzdRMzUlNYT7WoTXRJRY7c+lC/vn0AyA/KpTMktioModaSMt7cig8mZE5cE8eLdQBG+IltK5sI9yWkbX+pYQBnahgQSLpBSSeTo0sWuAjz0e14sHnVnpXfY54p5Jhq6fZEmJPwcXTLB4dy8fet5tGn4dzEmdsMroCjCXSeP6Hp9wZP8En7owXoz3CgXxaq9q7LZV538/oIxXh5akDw+pvlx/qXd73msHeyKK5KmuGXglHNMCgIXf4wvc2E2bOfxwXCWeqTc4hVpjf+iJ0R5sYoXPtuJw3QNTX7jB4HQ7loXrBwvj1fYscQsApGMyEkDXx4UefTD7mjt1gTe1pv6RFp23LaZOXG3Qu4RmjbejSSt0vTC4HO06X7ugHr0D894GgFUAYCWAMsJNXKnlbSGY7tuoInlhJC91fCg7vSdSmDyZKBZPvzEO9DrU0fujMCpvdnpn5zRSCgAFAKZLgEzQZpEnx5Is2Q7xyq0Z1PhpKpVjPWX8lvj1Rt7jDqkSl3tnYmmNPKjgzx1kQo3z0wYi684kqAXqgUsjbKI5Io8rsYVURQrxhvYpRDIzYM74CfgGcLBINn0hZ2QAAAAASUVORK5CYII=">
@@ -85,6 +91,29 @@
 		  
           <div class="jumbotron">
 		  
+    <!-- {{globalText}} -->
+<div ng-controller="MyCtrl" class="pull-right col-6 col-sm-6 col-lg-6">
+      <!-- {{localText}} -->
+    <h2>ToDo</h2>
+	
+    <div ng-controller="TodoCtrl">
+      <span>Remaining {{remaining()}} of {{todos.length}}</span>
+      [ <a href="" ng-click="archive()">Archive</a> ]
+      <ul class="unstyled">
+        <li ng-repeat="todo in todos">
+          <input type="checkbox" ng-model="todo.done">
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+      </ul>
+      <form ng-submit="addTodo()">
+        <input type="text" ng-model="todoText"  size="30"
+               placeholder="new ToDO">
+        <input class="btn-primary" type="submit" value="Add">
+      </form>
+    </div>
+
+</div> 
+		  
 		<h1 class="pull-left">hI _ </h1>
 		
 		<br><br>
@@ -94,9 +123,7 @@
 		</div>
 		
 		<div class=""></div>
-		
             <p> </p>
-			
           </div>
 		  
           <div class="row"> <!-- _______________________ -->
@@ -312,13 +339,13 @@ while (i< 5 ) {
 	</div>
           </div><!--/row-->
 		  
+		  
+		  
+		  
+		  
 <!-- <button onclick="myFunction()"> Click </button> -->
-
-			
 <div id="demo"> </div>  
-
 <script>
-
 /* var v_out="", i=0; 
 v_href='<a href="http://'; v_qute='"';  v_closes='">';
 v_class='class="list-group-item"';
@@ -417,6 +444,33 @@ function myFunction() {
 		//document.getElementById("demo").innerHTML = x;
 /* *	} /* */
 </script>
+
+	<!-- --
+	<a href="#" class="btn btn-primary btn-sm btn-xs" role="button">Learn more »</a>
+		<!-- EXMPLES class = btn-lg btn-sm btn-link --
+	<button type="button" class="btn btn-default">Default</button>
+		<!-- EXMPLES class = btn-default btn-primary btn-success 
+		 btn-info    btn-warning btn-danger btn-link --
+	<span class="label label-default">Default</span>
+	<div class="col-xs-3 col-sm-3"> </div>
+	<a href="" target="_blank" class="btn btn-primary btn-sm" role="button">» </a>
+	<!-- -->
+	<script>
+	/* *
+	arr_name = [ "habrahabr", "keddr", "anime online", "anidub" ];
+	
+	var v_link = "<a href='http://habrahabr.ru/' class='list-group-item'
+			target='_blank'>";
+	
+	for ( var v_i = 0; v_i < arr_name.length; v_i++ ) {
+		document.write( arr_name[v_i] + "</a>");
+		}
+	/* */
+	</script>
+		  
+		  
+
+
 		  
 		<div class="col-xs-12 col-sm-12"><!-- accoridon >> -->
 <div class="panel-group" id="accordion">
@@ -506,33 +560,8 @@ while (i< 7 ) {
   </div>
 
 </div>
-
-	<!-- --
-	<a href="#" class="btn btn-primary btn-sm btn-xs" role="button">Learn more »</a>
-		<!-- EXMPLES class = btn-lg btn-sm btn-link --
-	<button type="button" class="btn btn-default">Default</button>
-		<!-- EXMPLES class = btn-default btn-primary btn-success 
-		 btn-info    btn-warning btn-danger btn-link --
-	<span class="label label-default">Default</span>
-	<div class="col-xs-3 col-sm-3"> </div>
-	<a href="" target="_blank" class="btn btn-primary btn-sm" role="button">» </a>
-	<!-- -->
-	<script>
-	/* *
-	arr_name = [ "habrahabr", "keddr", "anime online", "anidub" ];
-	
-	var v_link = "<a href='http://habrahabr.ru/' class='list-group-item'
-			target='_blank'>";
-	
-	for ( var v_i = 0; v_i < arr_name.length; v_i++ ) {
-		document.write( arr_name[v_i] + "</a>");
-		}
-	/* */
-	</script>
-
 		</div> <!-- << accordion -->
-		  
-        </div><!--/span MAIN BODY CENTER -->
+    </div><!--/span MAIN BODY CENTER -->
 		
 		
 			<!-- RIGHT SIDEBAR -->
@@ -633,6 +662,7 @@ while (i< 6 ) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<!-- http://www.bootstrapcdn.com/ -->
 	
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
 			<!-- bootstrap.min & MyY js
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
 	<script src="javascripts/main.js"></script>
