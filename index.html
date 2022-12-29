@@ -1,190 +1,201 @@
-<html ng-app="app1" lang="en" ng-app><head>
+<html ng-app="app1" lang="en" ng-app>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="vadli">
     <meta name="author" content="vadli">
 
-	<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script> -->
-			<!-- bootstrap.min & MyY js
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
-	<!-- <script src="javascripts/main.js"></script> -->
-		<!-- here up ^ -->
-	
-		<!-- ico Link
-    <link rel="shortcut icon" href="//getbootstrap.com/assets/ico/favicon.ico"> -->
-	<link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANOSURBVDhPdZJZbExRHMYPU9RSS4yGbtMZ015zZ+3cO1pLNNaEBxISiWhqa0TwgMQLEhIvEokQb140eCBESlFVSy3VhZpW19nbO52lna0d2unM3HOO/xVELA/fy8n9fvnu//sQ5SiiPEUJLUFRFUF0OZXBmxy0nlroOiGb5LUimvsR0dkg9KcQfJgPAPOkjhYEcrF60iBWYjPZN2Qau+VhojWeBWLFB0RXg1H/T4DI4UoPH3vwlcVHA4vSVVYm0GLXh+s/sf7Wz2yw0SfHWwHA/gBM/SsB5kjFU97h92hHb8QUqbMvjS6Xb2n85jvtYJdTE707uACvA4AetPR/v2B08pF7TSWC1b0sVtOmHWodU6bOvzC4XQHV+LVoLj4QXCxW9MwSywFSBJB5v4OkG8wTOXKkjnd4G00e57By4lJQkbhYY+qLtjDejmad0G1jR16F8lNHrDJSBpDlAJj2EyIBpoBWwB3u20vCdaEcsSqYnzhn1QZaewwjzzqLhp87iqKPfItTh9oQsbQhagaz7HeABJkP2gC1bYTaCm1ZYllKQzdRMzUlNYT7WoTXRJRY7c+lC/vn0AyA/KpTMktioModaSMt7cig8mZE5cE8eLdQBG+IltK5sI9yWkbX+pYQBnahgQSLpBSSeTo0sWuAjz0e14sHnVnpXfY54p5Jhq6fZEmJPwcXTLB4dy8fet5tGn4dzEmdsMroCjCXSeP6Hp9wZP8En7owXoz3CgXxaq9q7LZV538/oIxXh5akDw+pvlx/qXd73msHeyKK5KmuGXglHNMCgIXf4wvc2E2bOfxwXCWeqTc4hVpjf+iJ0R5sYoXPtuJw3QNTX7jB4HQ7loXrBwvj1fYscQsApGMyEkDXx4UefTD7mjt1gTe1pv6RFp23LaZOXG3Qu4RmjbejSSt0vTC4HO06X7ugHr0D894GgFUAYCWAMsJNXKnlbSGY7tuoInlhJC91fCg7vSdSmDyZKBZPvzEO9DrU0fujMCpvdnpn5zRSCgAFAKZLgEzQZpEnx5Is2Q7xyq0Z1PhpKpVjPWX8lvj1Rt7jDqkSl3tnYmmNPKjgzx1kQo3z0wYi684kqAXqgUsjbKI5Io8rsYVURQrxhvYpRDIzYM74CfgGcLBINn0hZ2QAAAAASUVORK5CYII=">
-		<!-- here up ^ -->
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script> -->
+    <!-- bootstrap.min & MyY js
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
+    <!-- <script src="javascripts/main.js"></script> -->
+    <!-- here up ^ -->
+
+    <!-- ico Link
+<link rel="shortcut icon" href="//getbootstrap.com/assets/ico/favicon.ico"> -->
+    <link rel="shortcut icon" type="image/png"
+          href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANOSURBVDhPdZJZbExRHMYPU9RSS4yGbtMZ015zZ+3cO1pLNNaEBxISiWhqa0TwgMQLEhIvEokQb140eCBESlFVSy3VhZpW19nbO52lna0d2unM3HOO/xVELA/fy8n9fvnu//sQ5SiiPEUJLUFRFUF0OZXBmxy0nlroOiGb5LUimvsR0dkg9KcQfJgPAPOkjhYEcrF60iBWYjPZN2Qau+VhojWeBWLFB0RXg1H/T4DI4UoPH3vwlcVHA4vSVVYm0GLXh+s/sf7Wz2yw0SfHWwHA/gBM/SsB5kjFU97h92hHb8QUqbMvjS6Xb2n85jvtYJdTE707uACvA4AetPR/v2B08pF7TSWC1b0sVtOmHWodU6bOvzC4XQHV+LVoLj4QXCxW9MwSywFSBJB5v4OkG8wTOXKkjnd4G00e57By4lJQkbhYY+qLtjDejmad0G1jR16F8lNHrDJSBpDlAJj2EyIBpoBWwB3u20vCdaEcsSqYnzhn1QZaewwjzzqLhp87iqKPfItTh9oQsbQhagaz7HeABJkP2gC1bYTaCm1ZYllKQzdRMzUlNYT7WoTXRJRY7c+lC/vn0AyA/KpTMktioModaSMt7cig8mZE5cE8eLdQBG+IltK5sI9yWkbX+pYQBnahgQSLpBSSeTo0sWuAjz0e14sHnVnpXfY54p5Jhq6fZEmJPwcXTLB4dy8fet5tGn4dzEmdsMroCjCXSeP6Hp9wZP8En7owXoz3CgXxaq9q7LZV538/oIxXh5akDw+pvlx/qXd73msHeyKK5KmuGXglHNMCgIXf4wvc2E2bOfxwXCWeqTc4hVpjf+iJ0R5sYoXPtuJw3QNTX7jB4HQ7loXrBwvj1fYscQsApGMyEkDXx4UefTD7mjt1gTe1pv6RFp23LaZOXG3Qu4RmjbejSSt0vTC4HO06X7ugHr0D894GgFUAYCWAMsJNXKnlbSGY7tuoInlhJC91fCg7vSdSmDyZKBZPvzEO9DrU0fujMCpvdnpn5zRSCgAFAKZLgEzQZpEnx5Is2Q7xyq0Z1PhpKpVjPWX8lvj1Rt7jDqkSl3tnYmmNPKjgzx1kQo3z0wYi684kqAXqgUsjbKI5Io8rsYVURQrxhvYpRDIzYM74CfgGcLBINn0hZ2QAAAAASUVORK5CYII=">
+    <!-- here up ^ -->
 
     <title>ZoO</title>
 
     <!-- Bootstrap core CSS -->
-	<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"> -->
 
-			<!-- bootstrap.min css
-	<link href="http://bootswatch.com/united/bootstrap.min.css" rel="stylesheet"> -->
-	<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-		<!-- here up ^ -->
-		
-		<!-- bootstrap-theme.min & MyY css -->
-	<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/pygment_trac.css">
-		<!-- here up ^ -->
-		
-	<link href="//getbootstrap.com/examples/offcanvas/offcanvas.css" rel="stylesheet">
+    <!-- bootstrap.min css
+<link href="http://bootswatch.com/united/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <!-- here up ^ -->
+
+    <!-- bootstrap-theme.min & MyY css -->
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/pygment_trac.css">
+    <!-- here up ^ -->
+
+    <link href="//getbootstrap.com/examples/offcanvas/offcanvas.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <!-- <link href="offcanvas.css" rel="stylesheet"> -->
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--[if lt IE 9]>
+    <script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
+</head>
 
-  <body>
-    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-      <div class="container-fluid">
+<body>
+<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">zoO spaghetti</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">zoO spaghetti</a>
         </div>
         <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"> <a href="http://vadli.github.io/zoo/" title="Now you are here" > 
-			<div class="glyphicon glyphicon-asterisk <!-- glyphicon-ok --> "></div> here </a> </li>
-			
-            <li> <a href="http://vk.com/vadim.lyubimenko" target="_blank" title="my acc on vk.com">
-			<div class="glyphicon glyphicon-user"></div> on vK </a>
-			</li>
-			
-            <li> <a href="http://twitter.com/VadimLyubimenko" target="_blank" title="my acc on twitter.com">
-			<div class="glyphicon glyphicon-user"></div> on twitteR </a> </li>
-			
-            <li> <a href="http://facebook.com/vadim.lyubimenko" target="_blank" title="my acc on faceBook.com">
-			<div class="glyphicon glyphicon-user"></div> on faceBooK </a>
-			</li>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="http://vadli.github.io/zoo/" title="Now you are here">
+                    <div class="glyphicon glyphicon-asterisk <!-- glyphicon-ok --> "></div>
+                    here </a></li>
 
-            <li> <a href="https://instagram.com/liubimenkovadim/" target="_blank" title="my acc on instagram.com">
-			<div class="glyphicon glyphicon-user"></div> on instagraM </a> </li>
+                <li><a href="http://vk.com/vadim.lyubimenko" target="_blank" title="my acc on vk.com">
+                    <div class="glyphicon glyphicon-user"></div>
+                    on vK </a>
+                </li>
 
-            <li> <a href="http://fotostrana.ru/vadim-lyubimenko/" target="_blank" title="my acc on fotostrana.com">
-			<div class="glyphicon glyphicon-user"></div> on fotostranA </a>
-			</li>
-          </ul>
+                <li><a href="http://twitter.com/VadimLyubimenko" target="_blank" title="my acc on twitter.com">
+                    <div class="glyphicon glyphicon-user"></div>
+                    on twitteR </a></li>
+
+                <li><a href="http://facebook.com/vadim.lyubimenko" target="_blank" title="my acc on faceBook.com">
+                    <div class="glyphicon glyphicon-user"></div>
+                    on faceBooK </a>
+                </li>
+
+                <li><a href="https://instagram.com/liubimenkovadim/" target="_blank" title="my acc on instagram.com">
+                    <div class="glyphicon glyphicon-user"></div>
+                    on instagraM </a></li>
+
+                <li><a href="http://fotostrana.ru/vadim-lyubimenko/" target="_blank" title="my acc on fotostrana.com">
+                    <div class="glyphicon glyphicon-user"></div>
+                    on fotostranA </a>
+                </li>
+            </ul>
         </div><!-- /.nav-collapse -->
-      </div><!-- /.container-fluid -->
-    </div><!-- /.navbar -->
+    </div><!-- /.container-fluid -->
+</div><!-- /.navbar -->
 
-    <div class="container-fluid">
+<div class="container-fluid">
 
-      <div class="row row-offcanvas row-offcanvas-right">
+    <div class="row row-offcanvas row-offcanvas-right">
 
         <div class="col-xs-12 col-sm-9">
-          <p class="pull-right visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">сlick on me</button>
-          </p>
-		  
-          <div class="jumbotron">
-		  
-    <!-- {{globalText}} -->
-<div ng-controller="MyCtrl" class="pull-right col-6 col-sm-6 col-lg-6">
-      <!-- {{localText}} -->
-    <h2>ToDo</h2>
-	
-    <div ng-controller="TodoCtrl">
-      <span>Remaining {{remaining()}} of {{todos.length}}</span>
-      [ <a href="" ng-click="archive()">Archive</a> ]
-      <ul class="unstyled">
-        <li ng-repeat="todo in todos">
-          <input type="checkbox" ng-model="todo.done">
-          <span class="done-{{todo.done}}">{{todo.text}}</span>
-        </li>
-      </ul>
-      <form ng-submit="addTodo()">
-        <input type="text" ng-model="todoText"  size="30"
-               placeholder="new ToDO">
-        <input class="btn-primary" type="submit" value="Add">
-      </form>
-    </div>
+            <p class="pull-right visible-xs">
+                <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">сlick on me</button>
+            </p>
 
-</div> 
-		  
-		<h1 class="pull-left">hI _ </h1>
-		
-		<br><br>
-		<div class="input-group input-group-lg col-md-4">
-			<span class="input-group-addon">@</span>
-			<input type="text" class="form-control" placeholder="Username">
-		</div>
-		
-		<div class=""></div>
-            <p> </p>
-          </div>
-		  
-          <div class="row"> <!-- _______________________ -->
-		  
-<ul id="yw2" class="nav nav-tabs">
-<li class="active"> <a data-toggle="tab" href="#yw1_tab_1">english</a> </li>
+            <div class="jumbotron">
 
-<li> <a data-toggle="tab" href="#yw1_tab_2">русский</a> </li>
+                <!-- {{globalText}} -->
+                <div ng-controller="MyCtrl" class="pull-right col-6 col-sm-6 col-lg-6">
+                    <!-- {{localText}} -->
+                    <h2>ToDo</h2>
 
-<li> <a data-toggle="tab" href="#yw1_tab_3">中國的 :D </a>  </li>
-</ul>
+                    <div ng-controller="TodoCtrl">
+                        <span>Remaining {{remaining()}} of {{todos.length}}</span>
+                        [ <a href="" ng-click="archive()">Archive</a> ]
+                        <ul class="unstyled">
+                            <li ng-repeat="todo in todos">
+                                <input type="checkbox" ng-model="todo.done">
+                                <span class="done-{{todo.done}}">{{todo.text}}</span>
+                            </li>
+                        </ul>
+                        <form ng-submit="addTodo()">
+                            <input type="text" ng-model="todoText" size="30"
+                                   placeholder="new ToDO">
+                            <input class="btn-primary" type="submit" value="Add">
+                        </form>
+                    </div>
 
-<div class="tab-content">
-	<!-- 
-	panel-default panel-primary panel-success 
-	panel-info panel-warning panel-danger
-	-->
-<div id="yw1_tab_1" class="tab-pane fade active in">
-		<br>
-<div class="alert alert-info">
-when translating auxiliary tool was Google translator	
-</div>
-	
-            <div class="col-6 col-sm-6 col-lg-6">
-				<div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title"> 
-		<span class="glyphicon glyphicon-star"></span>
-			  Favorite Tools
-		<span class="glyphicon glyphicon-star"></span>
-			  </h3>
+                </div>
+
+                <h1 class="pull-left">hI _ </h1>
+
+                <br><br>
+                <div class="input-group input-group-lg col-md-4">
+                    <span class="input-group-addon">@</span>
+                    <input type="text" class="form-control" placeholder="Username">
+                </div>
+
+                <div class=""></div>
+                <p></p>
             </div>
-			<div class="panel-body">
-            <p> <a href="http://yiiframework.com" target="_blank">Yii
-			</a> (php framework) </p>
-            <p> on Yii: Gii code generator, Active Record (ORM object-relational mapping), DAO (Data Access Object). </p>
-			
-			<p> <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> (html, css, and js framework by Twitter) </p>
-			 
-			<p> <a href="http://jquery.com/" target="_blank">jQuery</a> (JavaScript library) </p>
-			</div><!--/panel-body-->
-				</div><!--/panel-->
-            </div><!--/span-->
-			
-            <div class="col-6 col-sm-6 col-lg-6">
-				<div class="panel panel-success">
-            <div class="panel-heading">
-              <h3 class="panel-title"> 
-		<span class="glyphicon glyphicon-star"></span>
-			  Favorite Lang
-		<span class="glyphicon glyphicon-star"></span>
-			  </h3>
-            </div>
-			<div class="panel-body">
-			
-			<div id="favor_lang_en"></div>
-			<script>
+
+            <div class="row"> <!-- _______________________ -->
+
+                <ul id="yw2" class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#yw1_tab_1">english</a></li>
+
+                    <li><a data-toggle="tab" href="#yw1_tab_2">русский</a></li>
+
+                    <li><a data-toggle="tab" href="#yw1_tab_3">中國的 :D </a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <!--
+                    panel-default panel-primary panel-success
+                    panel-info panel-warning panel-danger
+                    -->
+                    <div id="yw1_tab_1" class="tab-pane fade active in">
+                        <br>
+                        <div class="alert alert-info">
+                            when translating auxiliary tool was Google translator
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-lg-6">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        Favorite Tools
+                                        <span class="glyphicon glyphicon-star"></span>
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    <p><a href="http://yiiframework.com" target="_blank">Yii
+                                    </a> (php framework) </p>
+                                    <p> on Yii: Gii code generator, Active Record (ORM object-relational mapping), DAO (Data Access
+                                        Object). </p>
+
+                                    <p><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> (html, css, and js framework by
+                                        Twitter) </p>
+
+                                    <p><a href="http://jquery.com/" target="_blank">jQuery</a> (JavaScript library) </p>
+                                </div><!--/panel-body-->
+                            </div><!--/panel-->
+                        </div><!--/span-->
+
+                        <div class="col-6 col-sm-6 col-lg-6">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        Favorite Lang
+                                        <span class="glyphicon glyphicon-star"></span>
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+
+                                    <div id="favor_lang_en"></div>
+                                    <script>
 var v_out="", i=0; 
 v_href='<p> <a href="http://'; v_qute='"';  v_closes='">';
 v_class='class="list-group-item"';
@@ -201,55 +212,58 @@ while (i< 5 ) {
 	i++;
 	}
 	document.getElementById("favor_lang_en").innerHTML=v_out;
-			</script>
-			
-			</div><!--/panel-body-->
-				</div><!--/panel-->
-            </div><!--/span-->
-			
-</div><!-- yw1_tab_1 -->
 
-<div id="yw1_tab_2" class="tab-pane fade">
-		<br>
-<div class="alert alert-info">
-при переводе вспомогательным инструментом был google переводчик
-</div>
-	
-            <div class="col-6 col-sm-6 col-lg-6">
-				<div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title"> 
-		<span class="glyphicon glyphicon-star"></span>
-			  Избранные Инструменты
-		<span class="glyphicon glyphicon-star"></span>
-			  </h3>
-            </div>
-			<div class="panel-body">
-            <p> <a href="http://yiiframework.com" target="_blank">Yii </a>
-			(php framework) </p>
-            <p> в Yii: Gii code generator, Active Record (ORM объектно-реляционное отображение), DAO (Объекты доступа к данным).</p>
-			
-			<p> <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>
-			(html, css, js framework от Twitter) </p>
-			 
-			<p> <a href="http://jquery.com/" target="_blank">jQuery</a> (JavaScript библиотека) </p>
-			</div><!--/panel-body-->
-				</div><!--/panel-->
-            </div><!--/span-->
-			
-            <div class="col-6 col-sm-6 col-lg-6">
-				<div class="panel panel-success">
-            <div class="panel-heading">
-              <h3 class="panel-title"> 
-		<span class="glyphicon glyphicon-star"></span>
-			  Избранные Языки
-		<span class="glyphicon glyphicon-star"></span>
-			  </h3>
-            </div>
-			<div class="panel-body">
 
-			<div id="favor_lang_ru"></div>
-			<script>
+                                    </script>
+
+                                </div><!--/panel-body-->
+                            </div><!--/panel-->
+                        </div><!--/span-->
+
+                    </div><!-- yw1_tab_1 -->
+
+                    <div id="yw1_tab_2" class="tab-pane fade">
+                        <br>
+                        <div class="alert alert-info">
+                            при переводе вспомогательным инструментом был google переводчик
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-lg-6">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        Избранные Инструменты
+                                        <span class="glyphicon glyphicon-star"></span>
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    <p><a href="http://yiiframework.com" target="_blank">Yii </a>
+                                        (php framework) </p>
+                                    <p> в Yii: Gii code generator, Active Record (ORM объектно-реляционное отображение), DAO (Объекты
+                                        доступа к данным).</p>
+
+                                    <p><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>
+                                        (html, css, js framework от Twitter) </p>
+
+                                    <p><a href="http://jquery.com/" target="_blank">jQuery</a> (JavaScript библиотека) </p>
+                                </div><!--/panel-body-->
+                            </div><!--/panel-->
+                        </div><!--/span-->
+
+                        <div class="col-6 col-sm-6 col-lg-6">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        Избранные Языки
+                                        <span class="glyphicon glyphicon-star"></span>
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+
+                                    <div id="favor_lang_ru"></div>
+                                    <script>
 var v_out="", i=0; 
 v_href='<p> <a href="http://'; v_qute='"';  v_closes='">';
 v_class='class="list-group-item"';
@@ -266,55 +280,57 @@ while (i< 5 ) {
 	i++;
 	}
 	document.getElementById("favor_lang_ru").innerHTML=v_out;
-			</script>
-			
-			</div><!--/panel-body-->
-				</div><!--/panel-->
-            </div><!--/span-->
 
-</div><!-- yw1_tab_2 -->
 
-<div id="yw1_tab_3" class="tab-pane fade">
-		<br>
-<div class="alert alert-info">
-在翻譯輔助工具是谷歌翻譯
-</div>
-	
-            <div class="col-6 col-sm-6 col-lg-6">
-				<div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title"> 
-		<span class="glyphicon glyphicon-star"></span>
-			  特色工具
-		<span class="glyphicon glyphicon-star"></span>
-			  </h3>
-            </div>
-			<div class="panel-body">
-            <p> <a href="http://yiiframework.com" target="_blank">Yii</a>
-			(php framework) </p>
-            <p> on Yii: Gii code generator, Active Record (ORM), DAO (數據訪問對象).</p>
-			
-			<p> <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>
-			(html, css, js framework by Twitter) </p>
-			 
-			<p> <a href="http://jquery.com/" target="_blank">jQuery</a> (JavaScript library) </p>
-			</div><!--/panel-body-->
-				</div><!--/panel-->
-            </div><!--/span-->
-			
-            <div class="col-6 col-sm-6 col-lg-6">
-				<div class="panel panel-success">
-            <div class="panel-heading">
-              <h3 class="panel-title"> 
-		<span class="glyphicon glyphicon-star"></span>
-			  所選語言
-		<span class="glyphicon glyphicon-star"></span>
-			  </h3>
-            </div>
-			<div class="panel-body">
+                                    </script>
 
-			<div id="favor_lang_ch"></div>
-			<script>
+                                </div><!--/panel-body-->
+                            </div><!--/panel-->
+                        </div><!--/span-->
+
+                    </div><!-- yw1_tab_2 -->
+
+                    <div id="yw1_tab_3" class="tab-pane fade">
+                        <br>
+                        <div class="alert alert-info">
+                            在翻譯輔助工具是谷歌翻譯
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-lg-6">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        特色工具
+                                        <span class="glyphicon glyphicon-star"></span>
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    <p><a href="http://yiiframework.com" target="_blank">Yii</a>
+                                        (php framework) </p>
+                                    <p> on Yii: Gii code generator, Active Record (ORM), DAO (數據訪問對象).</p>
+
+                                    <p><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>
+                                        (html, css, js framework by Twitter) </p>
+
+                                    <p><a href="http://jquery.com/" target="_blank">jQuery</a> (JavaScript library) </p>
+                                </div><!--/panel-body-->
+                            </div><!--/panel-->
+                        </div><!--/span-->
+
+                        <div class="col-6 col-sm-6 col-lg-6">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        所選語言
+                                        <span class="glyphicon glyphicon-star"></span>
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+
+                                    <div id="favor_lang_ch"></div>
+                                    <script>
 var v_out="", i=0; 
 v_href='<p> <a href="http://'; v_qute='"';  v_closes='">';
 v_class='class="list-group-item"';
@@ -331,23 +347,22 @@ while (i< 5 ) {
 	i++;
 	}
 	document.getElementById("favor_lang_ch").innerHTML=v_out;
-			</script>
-			
-			</div><!--/panel-body-->
-				</div><!--/panel-->
-            </div><!--/span-->
 
-</div><!-- yw1_tab_3 -->
-	</div>
-          </div><!--/row-->
-		  
-		  
-		  
-		  
-		  
-<!-- <button onclick="myFunction()"> Click </button> -->
-<div id="demo"> </div>  
-<script>
+
+                                    </script>
+
+                                </div><!--/panel-body-->
+                            </div><!--/panel-->
+                        </div><!--/span-->
+
+                    </div><!-- yw1_tab_3 -->
+                </div>
+            </div><!--/row-->
+
+
+            <!-- <button onclick="myFunction()"> Click </button> -->
+            <div id="demo"></div>
+            <script>
 /* var v_out="", i=0; 
 v_href='<a href="http://'; v_qute='"';  v_closes='">';
 v_class='class="list-group-item"';
@@ -445,19 +460,21 @@ function myFunction() {
 		document.write( x );
 		//document.getElementById("demo").innerHTML = x;
 /* *	} /* */
-</script>
 
-	<!-- --
-	<a href="#" class="btn btn-primary btn-sm btn-xs" role="button">Learn more »</a>
-		<!-- EXMPLES class = btn-lg btn-sm btn-link --
-	<button type="button" class="btn btn-default">Default</button>
-		<!-- EXMPLES class = btn-default btn-primary btn-success 
-		 btn-info    btn-warning btn-danger btn-link --
-	<span class="label label-default">Default</span>
-	<div class="col-xs-3 col-sm-3"> </div>
-	<a href="" target="_blank" class="btn btn-primary btn-sm" role="button">» </a>
-	<!-- -->
-	<script>
+
+            </script>
+
+            <!-- --
+            <a href="#" class="btn btn-primary btn-sm btn-xs" role="button">Learn more »</a>
+                <!-- EXMPLES class = btn-lg btn-sm btn-link --
+            <button type="button" class="btn btn-default">Default</button>
+                <!-- EXMPLES class = btn-default btn-primary btn-success
+                 btn-info    btn-warning btn-danger btn-link --
+            <span class="label label-default">Default</span>
+            <div class="col-xs-3 col-sm-3"> </div>
+            <a href="" target="_blank" class="btn btn-primary btn-sm" role="button">» </a>
+            <!-- -->
+            <script>
 	/* *
 	arr_name = [ "habrahabr", "keddr", "anime online", "anidub" ];
 	
@@ -468,26 +485,28 @@ function myFunction() {
 		document.write( arr_name[v_i] + "</a>");
 		}
 	/* */
-	</script>
-		  
-		  
 
 
-		  
-		<div class="col-xs-12 col-sm-12"><!-- accoridon >> -->
-<div class="panel-group" id="accordion">
+            </script>
 
-  <div class="panel panel-default">
-    <h4 class="panel-title panel-heading text-center ">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse_1"> <div class="">
-			Yii links & oth.. links
-		</div> </a>
-    </h4>
-	
-    <div id="collapse_1" class="panel-collapse collapse in"> <div class="panel-body">
 
-			<div id="yii_links_oth"></div>
-			<script>
+            <div class="col-xs-12 col-sm-12"><!-- accoridon >> -->
+                <div class="panel-group" id="accordion">
+
+                    <div class="panel panel-default">
+                        <h4 class="panel-title panel-heading text-center ">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse_1">
+                                <div class="">
+                                    Yii links & oth.. links
+                                </div>
+                            </a>
+                        </h4>
+
+                        <div id="collapse_1" class="panel-collapse collapse in">
+                            <div class="panel-body">
+
+                                <div id="yii_links_oth"></div>
+                                <script>
 var v_out="", i=0; 
 v_href='<a href="http://'; v_qute='"';  v_closes='">';
 v_class='class="btn btn-primary btn-sm"';
@@ -505,74 +524,84 @@ while (i< 7 ) {
 	i++;
 	}
 	document.getElementById("yii_links_oth").innerHTML=v_out;
-			</script>
 
-	<br>|
-	<a href="http://www.w3schools.com" target="_blank" class="btn btn-primary btn-sm" role="button">
-	w3 Schools » </a>
 
-		<br>
-	<p> 
-	<a href="http://jquery.com" target="_blank">Jquery </a> (JavaScript library), 
-	<a href="https://jmeter.apache.org" target="_blank">Jmeter </a> (load test by Apache Foundation),
-	<a href="http://portableapps.com/ru" target="_blank">Portable Apps</a>,
-	<a href="http://www.linuxmint.com" target="_blank">Linux Mint.</a> </p>
-			
-	<h4><span class="label label-default">Text editors: </span></h4>
-	<a href="http://www.sublimetext.com" target="_blank" class="btn btn-primary btn-sm" role="button">
-	Sublime » </a>
-	<a href="http://notepad-plus-plus.org" target="_blank" class="btn btn-primary btn-sm" role="button">
-	Notepad++ » </a>
-	<a href="http://atom.io" target="_blank" class="btn btn-primary btn-sm" role="button">
-	Atom » </a>
-    </div> </div>
-	  
-  </div>
-  
-  <div class="panel panel-default">
-    <h4 class="panel-title panel-heading text-center ">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse_2"> <div class="">
-		items others..
-		</div> </a>
-    </h4>
-	
-    <div id="collapse_2" class="panel-collapse collapse"> <div class="panel-body">
-              <h3 class="panel-title">Other Contacts</h3>
-            </div>
-			<div class="panel-body">
-		<ul>
-none
-		</ul>
-	<p>icq: 359359353</p>
-	<p>email: oth-any@yandex.ru</p>
-	<p>mostly I'm on 
-	<a href="https://twitter.com/VadimLyubimenko" target="_blank">
-	twitter.com</a>
-	&
-	<a href="http://vk.com/vadim.lyubimenko" target="_blank">
-	vk.com</a>
-	<p/>
-    </div> </div>
-	
-  </div>
+                                </script>
 
-</div>
-		</div> <!-- << accordion -->
-    </div><!--/span MAIN BODY CENTER -->
-		
-		
-			<!-- RIGHT SIDEBAR -->
+                                <br>|
+                                <a href="http://www.w3schools.com" target="_blank" class="btn btn-primary btn-sm" role="button">
+                                    w3 Schools » </a>
+
+                                <br>
+                                <p>
+                                    <a href="http://jquery.com" target="_blank">Jquery </a> (JavaScript library),
+                                    <a href="https://jmeter.apache.org" target="_blank">Jmeter </a> (load test by Apache Foundation),
+                                    <a href="http://portableapps.com/ru" target="_blank">Portable Apps</a>,
+                                    <a href="http://www.linuxmint.com" target="_blank">Linux Mint.</a></p>
+
+                                <h4><span class="label label-default">Text editors: </span></h4>
+                                <a href="http://www.sublimetext.com" target="_blank" class="btn btn-primary btn-sm" role="button">
+                                    Sublime » </a>
+                                <a href="http://notepad-plus-plus.org" target="_blank" class="btn btn-primary btn-sm" role="button">
+                                    Notepad++ » </a>
+                                <a href="http://atom.io" target="_blank" class="btn btn-primary btn-sm" role="button">
+                                    Atom » </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="panel panel-default">
+                        <h4 class="panel-title panel-heading text-center ">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse_2">
+                                <div class="">
+                                    items others..
+                                </div>
+                            </a>
+                        </h4>
+
+                        <div id="collapse_2" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <h3 class="panel-title">Other Contacts</h3>
+                            </div>
+                            <div class="panel-body">
+                                <ul>
+                                    none
+                                </ul>
+                                <p>icq: 359359353</p>
+                                <p>email: oth-any@yandex.ru</p>
+                                <p>mostly I'm on
+                                    <a href="https://twitter.com/VadimLyubimenko" target="_blank">
+                                        twitter.com</a>
+                                    &
+                                    <a href="http://vk.com/vadim.lyubimenko" target="_blank">
+                                        vk.com</a>
+                                <p/>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div> <!-- << accordion -->
+        </div><!--/span MAIN BODY CENTER -->
+
+
+        <!-- RIGHT SIDEBAR -->
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation <!-- complementary -->">
-          <div class="list-group
+            <div class="list-group
 		  nav bs-docs-sidenav">
-		  
-		<label> <h1> <small>
-		<span class="glyphicon glyphicon-star"></span> Favorite Links <span class="glyphicon glyphicon-star"></span>
-		</small></h1> </label>
-		
-			<div id="favor_links"></div>
-			  <a href="https://vadli.github.io/zoo/2014/index.html" class="list-group-item" target="_blank">2014</a>
-			<script>
+
+                <label><h1><small>
+                    <span class="glyphicon glyphicon-star"></span> Favorite Links <span class="glyphicon glyphicon-star"></span>
+                </small></h1></label>
+
+                <div id="favor_links2">
+                    <a href="https://vadli.github.io/zoo/2014/index.html" class="list-group-item" target="_blank">2014</a>
+                </div>
+
+                <div id="favor_links"></div>
+                <script>
 var v_out="", i=0; 
 v_href='<a href="http://'; v_qute='"';  v_closes='">';
 v_class='class="list-group-item"';
@@ -588,14 +617,16 @@ while (i< 6 ) {
 	i++;
 	}
 	document.getElementById("favor_links").innerHTML=v_out;
-			</script>
-			
-		<label> <h1> <small>
-		<span class="glyphicon glyphicon-star"></span> youtube channel <span class="glyphicon glyphicon-star"></span>
-		</small></h1> </label>
-			
-			<div id="youtube_channel"></div>
-			<script>
+
+
+                </script>
+
+                <label><h1><small>
+                    <span class="glyphicon glyphicon-star"></span> youtube channel <span class="glyphicon glyphicon-star"></span>
+                </small></h1></label>
+
+                <div id="youtube_channel"></div>
+                <script>
 var v_out="", i=0; 
 v_href='<a href="http://'; v_qute='"';  v_closes='">';
 v_class='class="list-group-item"';
@@ -611,14 +642,16 @@ while (i< 6 ) {
 	i++;
 	}
 	document.getElementById("youtube_channel").innerHTML=v_out;
-			</script>
-			
-		<label> <h1> <small> 
-		<span class="glyphicon glyphicon-star"></span> other <span class="glyphicon glyphicon-star"></span>
-		</small></h1> </label>
-		
-			<div id="other_link"></div>
-			<script>
+
+
+                </script>
+
+                <label><h1><small>
+                    <span class="glyphicon glyphicon-star"></span> other <span class="glyphicon glyphicon-star"></span>
+                </small></h1></label>
+
+                <div id="other_link"></div>
+                <script>
 var v_out="", i=0; 
 v_href='<a href="http://'; v_qute='"';  v_closes='">';
 v_class='class="list-group-item"';
@@ -634,48 +667,50 @@ while (i< 6 ) {
 	i++;
 	}
 	document.getElementById("other_link").innerHTML=v_out;
-			</script>
-			
-          </div>
+
+
+                </script>
+
+            </div>
         </div><!--/span-->
-		
-      </div><!--/row-->
-		
-      <hr>
-	
-      <footer>
-        <p class="text-muted">This project is maintained by <a href="https://github.com/vadli" target="_blank">vadli</a>. 
-        <small>Hosted on GitHub Pages &mdash; Theme by <a href="http://bootswatch.com/" target="_blank">Bootswatch </a></small></p>
-		<p class="text-muted">License: <a href="http://en.wikipedia.org/wiki/MIT_License" target="_blank">Mit (en)</a>, 
-		<a href="https://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F_MIT" target="_blank">Mit (ru)</a> </p>
-		
-		<!-- <p class="text-muted"> a <a href="https://yadi.sk/i/GCKjUdOJjoFSd" target="_blank"> apt </a> </p> -->
 
-		<p class="pull-right"> 
-		<a href="#">Back to top</a></p>
-      </footer>
+    </div><!--/row-->
 
-    </div><!--/.container-fluid-->
+    <hr>
+
+    <footer>
+        <p class="text-muted">This project is maintained by <a href="https://github.com/vadli" target="_blank">vadli</a>.
+            <small>Hosted on GitHub Pages &mdash; Theme by <a href="http://bootswatch.com/" target="_blank">Bootswatch </a></small></p>
+        <p class="text-muted">License: <a href="http://en.wikipedia.org/wiki/MIT_License" target="_blank">Mit (en)</a>,
+            <a href="https://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F_MIT" target="_blank">Mit (ru)</a></p>
+
+        <!-- <p class="text-muted"> a <a href="https://yadi.sk/i/GCKjUdOJjoFSd" target="_blank"> apt </a> </p> -->
+
+        <p class="pull-right">
+            <a href="#">Back to top</a></p>
+    </footer>
+
+</div><!--/.container-fluid-->
 
 
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- http://www.bootstrapcdn.com/ -->
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<!-- http://www.bootstrapcdn.com/ -->
-	
-	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-			<!-- bootstrap.min & MyY js
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
-	<script src="javascripts/main.js"></script>
-		<!-- here up ^ -->
-		
-	<script src="//getbootstrap.com/examples/offcanvas/offcanvas.js"></script>
-	<!-- https://github.com/MaxCDN/bootstrap-cdn/issues/67
-	http://cdnjs.com/libraries/twitter-bootstrap/	-->
-	<script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/js/bootstrap-tab.js"></script>
-	<!-- https://developers.google.com/speed/libraries/devguide?hl=ru -->
-	<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script> -->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<!-- bootstrap.min & MyY js
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
+<script src="javascripts/main.js"></script>
+<!-- here up ^ -->
 
-</body></html>
+<script src="//getbootstrap.com/examples/offcanvas/offcanvas.js"></script>
+<!-- https://github.com/MaxCDN/bootstrap-cdn/issues/67
+http://cdnjs.com/libraries/twitter-bootstrap/	-->
+<script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/js/bootstrap-tab.js"></script>
+<!-- https://developers.google.com/speed/libraries/devguide?hl=ru -->
+<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script> -->
+
+</body>
+</html>
